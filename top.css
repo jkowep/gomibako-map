@@ -1,0 +1,68 @@
+/* bodyとhtmlの余白をなくして全画面表示にする */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    touch-action: manipulation; /* タッチ操作の改善 */
+}
+
+/* 地図を全画面表示にする */
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* ポップアップのタイトルのデザイン */
+.popup-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* ポップアップの説明文のデザイン */
+.popup-info {
+    font-size: 12px;
+    color: darkgray;
+}
+
+/* 現在地マーカーのデザイン（青い丸） */
+.current-location {
+    background: lightcoral;       /* 背景色 */
+    width: 20px;            /* 横幅 */
+    height: 20px;           /* 縦幅 */
+    border-radius: 50%;     /* 丸くする */
+    border: 3px solid white; /* 白い枠線 */
+    animation: blink 2s infinite; /* 点滅アニメーション */
+}
+
+/* 点滅アニメーションの設定 */
+@keyframes blink {
+    0%   { opacity: 1; } /* 表示 */
+    50%  { opacity: 0; } /* 非表示 */
+    100% { opacity: 1; } /* 表示 */
+}
+
+/* 現在地に戻るボタンのデザイン */
+#current-btn {
+    color: black;
+    position: absolute;
+    top: 80px;              /* 上からの位置 */
+    left: 10px;             /* 左からの位置 */
+    z-index: 1000;          /* 地図より前面に表示 */
+    background: white;      /* 背景色 */
+    border: 2px solid gray; /* 枠線 */
+    border-radius: 5px;     /* 角を丸くする */
+    padding: 10px;          /* 内側の余白 */
+    font-size: 14px;        /* 文字の大きさ */
+    cursor: pointer;        /* カーソルをポインターにする */
+}
+
+/* ボタンにカーソルを合わせたときのデザイン */
+#current-btn:hover {
+    background: lightgray;
+}
